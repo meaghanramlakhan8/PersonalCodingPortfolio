@@ -1,0 +1,39 @@
+.site-footer {
+    background-color: #0b192f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* If you're using a flex or grid layout and want the footer at the bottom */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-content a {
+    color: #4da8da;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .footer-content a:hover,
+  .footer-content .active-footer-link {
+    text-decoration: underline;
+  }
+  
+  a {
+    color: #4da8da;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
