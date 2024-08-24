@@ -1,0 +1,91 @@
+body {
+    background-color: #0a192f; /* Dark blue background */
+    color: #e6f1ff; /* Light blue text */
+  }
+  
+  .work-container {
+    max-width: 900px;
+    font-family: "Lucida Console", Courier, monospace;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header p {
+    font-size: 1.2em;
+    color: #ccd6f6; /* Lighter blue */
+  }
+  
+  .timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: 40px;
+    border-left: 2px solid #1f448f; /* Accent blue */
+  }
+  
+  .timeline-item {
+    font-family: 'Montserrat', sans-serif; /* Updated font */;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: -11px; /* Adjusted for centering */
+    width: 22px;
+    height: 22px;
+    background-color: #1a42a8;
+    border-radius: 50%;
+    top: 15px; /* Adjusted for centering */
+    box-shadow: 0 0 0 4px #0a192f; /* Dark border for better visibility */
+  }
+  
+  .timeline-content {
+    background: #112240; /* Slightly lighter dark blue */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(2, 12, 27, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(100% - 40px);
+  }
+  
+  .timeline-content h2 {
+    font-size: 1.5em;
+    color: #e6f1ff; /* Light blue text */
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1.3em;
+    color: #8892b0; /* Medium blue */
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content .location,
+  .timeline-content .duration {
+    font-size: 1em;
+    color: #687C9F; /* Accent blue */
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #e6f1ff; /* Light blue text */
+  }
+  
+  .timeline-content ul li {
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(100, 255, 218, 0.2);
+  }
+  

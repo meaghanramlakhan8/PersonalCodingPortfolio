@@ -1,79 +1,64 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #0D1B2A;
-    color: #FFFFFF;
-  }
-  
-  .container {
-    text-align: center;
-    position: relative;
-  }
-  
-  .header {
-    background-color: #1B263B;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .main-section {
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #1B263B, #0D1B2A);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .intro-text {
-    max-width: 800px;
-    text-align: left;
-    color: #FFFFFF;
-  }
-  
-  .intro-title {
-    font-size: 48px;
-    font-weight: bold;
-    color: #FF4C60;
-  }
-  
-  .intro-subtitle {
-    font-size: 24px;
-    margin: 20px 0;
-    color: #A9A9A9;
-  }
-  
-  .intro-description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #A9A9A9;
-  }
-  
-  .timeline-section {
-    padding: 50px 20px;
-    background-color: #0D1B2A;
-  }
-  
-  .timeline {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .timeline-item {
-    background-color: #1B263B;
-    border-radius: 10px;
-    padding: 20px;
-    color: #FFFFFF;
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .timeline-item span {
-    display: block;
-    font-size: 16px;
-    color: #FF4C60;
-    margin-bottom: 10px;
-  }
+.about-container {
+  font-family: "Lucida Console", Courier, monospace;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h1 {
+  font-size: 2.5em;
+  color: #feede0;
+  margin-bottom: 20px;
+}
+
+.about-header p {
+  font-size: 1.2em;
+  color: #8892b0;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.about-card {
+  background: #112240;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif; /* Updated font */;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(2, 12, 27, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(50% - 40px);
+  min-width: 280px;
+}
+
+.about-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(49, 112, 230, 0.4);
+}
+
+.about-card h2 {
+  font-size: 1.5em;
+  color: #213e97;
+  margin-bottom: 10px;
+}
+
+.about-card h3 {
+  font-size: 1.2em;
+  color: #8892b0;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  font-size: 1em;
+  color: #ccd6f6;
+  margin-bottom: 10px;
+}
