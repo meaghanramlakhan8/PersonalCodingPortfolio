@@ -29,7 +29,7 @@ function Home() {
                                 <h3>Brief Bio</h3>
                             </div>
                             <div className="flip-card-back">
-                            <p> I am a rising junior at Rice University pursuing a Bachelor's degree with an intent to minor in Data Science & Statistics.<span class="link-span"><a href="/About.js">Click here to learn more</a></span>
+                            <p> I am a rising junior at Rice University pursuing a Bachelor's degree with an intent to minor in Data Science & Statistics.<span class="link-span"><a href="/about">Click here to learn more</a></span>
                             </p>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ function Home() {
                                 <h3>Work Experience</h3>
                             </div>
                             <div className="flip-card-back">
-                                <p>I have served various teaching positions within my career, with my current position being a Reasoning About Algorithms (COMP 382) Teaching Assistant.<span class="link-span"><a href="/Work.js">Click here to learn more about my experience and Skills</a></span>
+                                <p>I have served various teaching positions within my career, with my current position being a Reasoning About Algorithms (COMP 382) Teaching Assistant.<span class="link-span"><a href="/work">Click here to learn more about my experience and Skills</a></span>
                                 </p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ function Home() {
                                 <h3>Projects</h3>
                             </div>
                             <div className="flip-card-back">
-                                <p> I have completed numerous projects related to my field of study. <span class="link-span"><a href="/Projects.js">Click here to learn more about my projects</a></span></p>
+                                <p> I have completed numerous projects related to my field of study. <span class="link-span"><a href="/projects">Click here to learn more about my projects</a></span></p>
                             </div>
                         </div>
                     </div>

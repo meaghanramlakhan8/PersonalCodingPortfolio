@@ -22,9 +22,9 @@ a:hover {
 
 .container {
     text-align: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    padding-top: 5rem;
+    padding-top: 10rem;
     animation: fadeIn 2s ease-in;
     display: flex;
     flex-direction: column;
@@ -118,7 +118,7 @@ a:hover {
 .OtherHeader .intro {
     position: relative;
     font-family: "Lucida Console", Courier, monospace;
-    height: 2rem; /* Adjust the height to fit the rotating text */
+    height: 4rem; /* Adjust the height to fit the rotating text */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,7 +184,7 @@ a:hover {
     justify-content: center;
     flex-wrap: wrap;
     gap: 5rem; /* Increased gap for better spacing */
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .link-span {
@@ -195,8 +195,8 @@ a:hover {
 
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 300px;
     perspective: 1000px;
 }
 

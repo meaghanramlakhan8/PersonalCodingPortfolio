@@ -19,7 +19,7 @@ const workExperiences = [
     location: "Houston, TX",
     duration: "August 2023 – Present",
     responsibilities: [
-      "Conducted and facilitated weekly office hours for 500+ students across three courses.",
+      "Conducted and facilitated weekly office hours for 500+ students across three courses (COMP 140, COMP 182, COMP 382).",
       "Provided detailed support and guidance in algorithms, data structures, and Python3.",
       "Responded promptly to 200+ inquiries on the class Piazza forum.",
       "Evaluated and graded 500+ assignments, quizzes, and exams."
@@ -46,7 +46,6 @@ const workExperiences = [
       "Leveraged advanced web technologies for a seamless user experience."
     ]
   },
-
 ];
 
 const WorkExperience = () => {
@@ -75,6 +74,15 @@ const WorkExperience = () => {
           </div>
         ))}
       </section>
+
+      {/* Resume Download Section */}
+      <div className="resume-section">
+        <h2>Want to Learn More?</h2>
+        <p>For a more detailed overview of my experience, feel free to download my resume below.</p>
+        <a href="/MRResume.pdf" className="resume-button" download>
+          <i className="fas fa-file-download"></i> Download My Resume
+        </a>
+      </div>
     </div>
   );
 }
