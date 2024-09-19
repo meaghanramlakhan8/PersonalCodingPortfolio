@@ -3,17 +3,6 @@ import './Work.css';
 
 const workExperiences = [
   {
-    role: "Live Instructor Technology Intern",
-    company: "RCEL ELITE Tech Program",
-    location: "Rice University, Houston, TX",
-    duration: "May 2024 – July 2024",
-    responsibilities: [
-      "Designed and refined canvas and course materials on machine learning and robotics.",
-      "Led 20+ classroom sessions on cutting-edge machine learning and robotics topics.",
-      "Provided detailed feedback and managed attendance and grading with accuracy."
-    ]
-  },
-  {
     role: "Teaching Assistant",
     company: "Rice University",
     location: "Houston, TX",
@@ -26,14 +15,14 @@ const workExperiences = [
     ]
   },
   {
-    role: "Computer Hardware Engineer & Mission Assurance Specialist",
-    company: "NASA L’SPACE Program - ASU",
-    location: "Remote (Headquartered in Arizona)",
-    duration: "May 2023 – August 2023",
+    role: "Live Instructor Technology Intern",
+    company: "RCEL ELITE Tech Program",
+    location: "Rice University, Houston, TX",
+    duration: "May 2024 – July 2024",
     responsibilities: [
-      "Collaborated with 11 undergraduate students to conceptualize a cost-effective robotic mission.",
-      "Designed intricate Command and Data Handling subsystems.",
-      "Developed comprehensive software architecture and risk management strategies."
+      "Designed and refined canvas and course materials on machine learning and robotics.",
+      "Led 20+ classroom sessions on cutting-edge machine learning and robotics topics.",
+      "Provided detailed feedback and managed attendance and grading with accuracy."
     ]
   },
   {
@@ -46,6 +35,17 @@ const workExperiences = [
       "Leveraged advanced web technologies for a seamless user experience."
     ]
   },
+  {
+    role: "Computer Hardware Engineer & Mission Assurance Specialist",
+    company: "NASA L’SPACE Program - ASU",
+    location: "Remote (Headquartered in Arizona)",
+    duration: "May 2023 – August 2023",
+    responsibilities: [
+      "Collaborated with 11 undergraduate students to conceptualize a cost-effective robotic mission.",
+      "Designed intricate Command and Data Handling subsystems.",
+      "Developed comprehensive software architecture and risk management strategies."
+    ]
+  }
 ];
 
 const WorkExperience = () => {

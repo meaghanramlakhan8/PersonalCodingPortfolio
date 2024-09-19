@@ -10,7 +10,7 @@ body, html {
 }
 
 a {
-  color: #4dabf7; /* Sky blue for links, adds a pop of color */
+  color: #4dabf7; /* Sky blue for links */
   text-decoration: none;
   transition: color 0.3s;
 }
