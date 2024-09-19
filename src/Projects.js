@@ -9,14 +9,14 @@ function Projects() {
       title: "RDT Ticketing Application",
       description: "Developed an innovative ticketing platform for Rice Dance Theatre with Rice App Development Club RiceApps, leveraging advanced web technologies for a seamless user experience.",
       technologies: ["MongoDB", "HTML/CSS", "JavaScript", "Node.js"],
-      images: ["/rdt-ticketing3.png","/rdt-ticketing1.png", "/rdt-ticketing2.png"], // Replace with your actual image paths
+      images: ["/rdt-ticketing2.png"], // Replace with your actual image paths
       codeLink: "https://github.com/rice-apps/rdt-ticketing/tree/main/client",
     },
     {
       title: "Analyzing Reported FDA Adverse Events",
       description: "Collaborated on a data science initiative to examine safety risks in consumer products using FDA's Adverse Event Reporting System data.",
       technologies: ["Python", "Numpy", "Pandas", "Sci-Kit Learn"],
-      images: ["fda-adverse-events1.png", "fda-adverse-events2.png","fda-adverse-events3.png"], // Replace with your actual image paths
+      images: ["fda-adverse-events3.png"], // Replace with your actual image paths
       codeLink: "https://devpost.com/software/analysing-reported-fda-adverse-events-of-consumer-products?ref_content=user-portfolio&ref_feature=in_progress",
     },
     {
