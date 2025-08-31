@@ -62,7 +62,7 @@ const About = () => {
     <h3>Beyond the Screen</h3>
     <p>
       Outside of academics and projects, I enjoy exploring design, mentoring peers, and staying engaged with the broader tech community. 
-      I also like discovering Houston’s culture and food scene, running, and experimenting with new hobbies that keep me creative and balanced.
+      I also like discovering Houston’s culture and food scene, and experimenting with new hobbies that keep me creative and balanced.
     </p>
     <p>
       I thrive in collaborative environments where curiosity and innovation drive meaningful work—and I’m always looking for opportunities to grow alongside others.
