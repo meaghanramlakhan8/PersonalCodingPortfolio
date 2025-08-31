@@ -45,6 +45,13 @@ function Projects() {
       images: ["/image.png"],
       codeLink: "https://github.com/your-repo/hypertension-cvd-analysis", // Replace with actual link
     },
+    {
+    title: "BRAINCELL-AID Biomedical Annotation Platform",
+    description: "Extended the BRAINCELL-AID web platform by designing Python/MySQL pipelines for automated data ingestion and processing of 5,000+ cell records, and building interactive data visualizations to support 100+ users.",
+    technologies: ["Python", "MySQL", "Data Visualization", "Pipelines"],
+    images: ["/braincell-aid.png"],
+    codeLink: "https://biodataai.uth.edu/BRAINCELL-AID/BRAINCELL-AID.py",
+    },
   ];
 
   return (
