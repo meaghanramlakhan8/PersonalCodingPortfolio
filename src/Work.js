@@ -8,10 +8,20 @@ const workExperiences = [
     location: "Houston, TX",
     duration: "August 2023 – Present",
     responsibilities: [
-      "Conducted and facilitated weekly office hours for 500+ students across three courses (COMP 140, COMP 182, COMP 382).",
-      "Provided detailed support and guidance in algorithms, data structures, and Python3.",
-      "Responded promptly to 200+ inquiries on the class Piazza forum.",
-      "Evaluated and graded 500+ assignments, quizzes, and exams."
+      "Served as a Teaching Assistant for four Computer Science courses, supporting 800+ students through office hours, Piazza responses, and grading.",
+      "Currently TA for Concurrent Program Design (COMP 318), managing five groups of three students on two major full-stack projects.",
+      "Guided teams with technical direction and milestone tracking in algorithms, concurrency, and Python 3."
+    ]
+  },
+  {
+    role: "Cancer & AI Summer Intern",
+    company: "CPRIT BIG-TCR Program, McWilliams School of Biomedical Informatics at UTHealth Houston",
+    location: "Houston, TX",
+    duration: "June 2025 – August 2025",
+    responsibilities: [
+      "Engineered a 5-layer MLP neural network in Python/TensorFlow for antibody–protein binding prediction, achieving 85%+ accuracy with cross-validation and L2 regularization.",
+      "Extended BRAINCELL-AID, a biomedical brain annotation platform, by designing Python/MySQL pipelines for automated ingestion of 5,000+ cell records.",
+      "Built interactive data visualizations to support 100+ users."
     ]
   },
   {
@@ -20,9 +30,9 @@ const workExperiences = [
     location: "Rice University, Houston, TX",
     duration: "May 2024 – July 2024",
     responsibilities: [
-      "Designed and refined canvas and course materials on machine learning and robotics.",
-      "Led 20+ classroom sessions on cutting-edge machine learning and robotics topics.",
-      "Provided detailed feedback and managed attendance and grading with accuracy."
+      "Selected as one of 20 instructors to design and refine course materials on machine learning and robotics.",
+      "Led 40+ classroom sessions, delivering interactive lessons and detailed feedback.",
+      "Managed grading, attendance, and student engagement with precision."
     ]
   },
   {
@@ -31,8 +41,8 @@ const workExperiences = [
     location: "Rice University, Houston, TX",
     duration: "January 2024 – April 2024",
     responsibilities: [
-      "Developed an innovative ticketing platform for Rice Dance Theatre.",
-      "Leveraged advanced web technologies for a seamless user experience."
+      "Developed and deployed a full-stack ticketing platform for Rice Dance Theatre.",
+      "Built show listings, seat availability, and ticket sales management features with MongoDB, Node.js, and modern frontend technologies."
     ]
   },
   {
@@ -41,9 +51,9 @@ const workExperiences = [
     location: "Remote (Headquartered in Arizona)",
     duration: "May 2023 – August 2023",
     responsibilities: [
-      "Collaborated with 11 undergraduate students to conceptualize a cost-effective robotic mission.",
-      "Designed intricate Command and Data Handling subsystems.",
-      "Developed comprehensive software architecture and risk management strategies."
+      "Collaborated with 11 undergraduate students nationwide to conceptualize a cost-effective robotic mission to study Ceres’ geology and habitability.",
+      "Designed Command and Data Handling subsystems and developed risk management strategies.",
+      "Delivered detailed documentation and analysis triweekly in line with NASA standards."
     ]
   }
 ];
