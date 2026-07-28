@@ -11,3 +11,15 @@
 .mission-unlocked{position:fixed!important;inset:0!important;z-index:99999!important;display:flex!important;align-items:center!important;justify-content:center!important;visibility:visible!important;opacity:1!important}
 .mission-unlocked>section{position:relative!important;z-index:2!important;display:block!important;visibility:visible!important;opacity:1}
 .mission-unlocked .mission-stars{z-index:1}
+
+/* The achievement console remains a dark terminal in both site themes. */
+[data-theme="light"] .mission-unlocked{background:rgba(224,236,250,.82)}
+[data-theme="light"] .mission-unlocked>section{background:#030816;color:#edf7ff;border-color:#35d9ff;box-shadow:0 0 0 7px rgba(0,122,203,.06),0 30px 100px rgba(21,51,83,.32),inset 0 0 70px rgba(53,217,255,.05)}
+[data-theme="light"] .mission-unlocked h2{color:#edf7ff!important}
+[data-theme="light"] .mission-unlocked p{color:#9bb4c9!important}
+[data-theme="light"] .mission-unlocked section>span,[data-theme="light"] .mission-unlocked small{color:#35d9ff!important}
+[data-theme="light"] .mission-unlocked .mission-badge{color:#edf7ff;background:rgba(53,217,255,.045);border-color:#35d9ff}
+[data-theme="light"] .mission-unlocked .mission-badge b{color:#35d9ff}
+[data-theme="light"] .mission-unlocked code{color:#9bb4c9;border-color:#173048;background:#000}
+[data-theme="light"] .mission-unlocked code b{color:#2df2b0}
+[data-theme="light"] .mission-unlocked section>button{color:#9bb4c9}
