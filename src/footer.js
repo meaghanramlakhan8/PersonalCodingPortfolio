@@ -1,15 +1,2 @@
-import React from 'react';
-import './footer.css'; // Ensure you have a CSS file for styling
-
-const Footer = () => {
-    return (
-        <footer className="site-footer">
-            <div className="footer-container">
-                <p>Contact me at: <a href="mailto:meaghanramlakhan@outlook.com">meaghanramlakhan@outlook.com</a></p>
-                <p>&copy; 2024 Meaghan Ramlakhan. All rights reserved.</p>
-            </div>
-        </footer>
-    );
-}
-
-export default Footer;
+import React from 'react';import{Link}from'react-router-dom';import'./footer.css';
+export default function Footer(){return <footer className="site-footer"><div className="footer-container"><Link to="/"><span>&lt;MCR/&gt;</span> MEAGHAN RAMLAKHAN</Link><p>SOFTWARE ENGINEERING // HEALTHCARE // HOUSTON</p><div><a href="https://github.com/meaghanramlakhan8">GH</a><a href="https://www.linkedin.com/in/meaghan-ramlakhan/">LI</a><span>© {new Date().getFullYear()}</span></div></div></footer>}

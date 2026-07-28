@@ -1,28 +1,33 @@
-/* app.css */
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern and clean font */
-  background: #0b192f; /* Smooth dark blue gradient */
-  color: #ccd6f6; /* Light gray for text, soft and clear */
-  text-rendering: optimizeLegibility;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap');
+:root{--ink:#030816;--panel:#071329;--panel2:#0b1c38;--line:rgba(112,182,255,.2);--text:#edf7ff;--muted:#8ca5bb;--cyan:#35d9ff;--blue:#6f9eff;--green:#2df2b0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Manrope,sans-serif;background:radial-gradient(circle at 75% 8%,rgba(32,132,255,.2),transparent 30rem),linear-gradient(rgba(17,71,122,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(17,71,122,.06) 1px,transparent 1px),var(--ink);background-size:auto,70px 70px,70px 70px,auto;-webkit-font-smoothing:antialiased}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(#bde9ff .5px,transparent .5px);background-size:31px 31px;opacity:.12}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.App{min-height:100vh;overflow:hidden}.page-shell{width:min(1380px,calc(100% - 48px));margin:auto}.page-header{max-width:920px;padding:105px 0 65px}.page-header h1,.section-heading h2{font:700 clamp(2.8rem,6vw,5.8rem)/.96 Syne,sans-serif;letter-spacing:-.055em;margin:0}.page-header p:not(.eyebrow){max-width:730px;color:var(--muted);font-size:1.08rem;line-height:1.8}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 22px;color:var(--cyan);font:500 .7rem DM Mono,monospace;letter-spacing:.13em}.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}.button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-width:205px;padding:17px 20px;border:1px solid var(--line);font:500 .72rem DM Mono,monospace;text-transform:uppercase;letter-spacing:.06em;transition:.25s}.button:hover{transform:translateY(-3px);border-color:var(--cyan)}.button-primary{background:var(--cyan);color:var(--ink);border-color:var(--cyan)}.text-link{color:var(--cyan);font:.7rem DM Mono,monospace;text-transform:uppercase}@media(max-width:700px){.page-shell{width:calc(100% - 28px)}.page-header{padding:72px 0 45px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+body{background:radial-gradient(circle at 78% 8%,rgba(32,132,255,.2),transparent 31rem),linear-gradient(rgba(53,157,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(53,157,255,.05) 1px,transparent 1px),var(--ink);background-size:auto,70px 70px,70px 70px,auto;transition:background-color .3s,color .3s}body:before{background:radial-gradient(#c9eaff .5px,transparent .5px);background-size:31px 31px}
 
-a {
-  color: #4dabf7; /* Sky blue for links */
-  text-decoration: none;
-  transition: color 0.3s;
-}
+[data-theme="light"]{--ink:#eef6ff;--panel:#fff;--panel2:#e5f1ff;--line:rgba(24,91,164,.2);--text:#071a33;--muted:#526c86;--cyan:#007acb;--blue:#2e64d4;--green:#008b72}
+[data-theme="light"] body{background:radial-gradient(circle at 78% 8%,rgba(63,150,255,.18),transparent 31rem),linear-gradient(rgba(22,100,180,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(22,100,180,.055) 1px,transparent 1px),var(--ink);background-size:auto,70px 70px,70px 70px,auto}
+[data-theme="light"] body:before{background:radial-gradient(#145da0 .45px,transparent .45px);background-size:31px 31px;opacity:.1}
+[data-theme="light"] .about-card,[data-theme="light"] .project-card,[data-theme="light"] .contact-form,[data-theme="light"] .fact,[data-theme="light"] .timeline-content{background:rgba(255,255,255,.84);box-shadow:0 16px 45px rgba(32,88,145,.07)}
+[data-theme="light"] .about-card:nth-child(2){background:radial-gradient(circle at 100% 0,rgba(0,122,203,.12),transparent 48%),#fff}
+[data-theme="light"] .about-card:nth-child(3){background:linear-gradient(145deg,#d8ebff,#c5e1ff)}
+[data-theme="light"] .about-card:nth-child(3) p{color:#3d5e7b}
+[data-theme="light"] .contact-form:before{border-color:rgba(0,122,203,.18)}
+html{font-size:18px}
 
-a:hover {
-  color: #ffffff;
-  text-shadow: 0px 0px 8px rgba(255,255,255,0.5); /* Subtle white glow on hover */
-}
+/* Readability floor for the small technical UI text. */
+.eyebrow,.nav-menu>a,.theme-toggle,.space-taskbar span,.signal span,.portrait-caption span,.portrait-caption small,.portrait-coordinate,.stack-track strong,.stack-strip>span,.panel-label,.service small,.service span,.node-inspector small,.node-inspector strong,.node-inspector span,.lab-status,.terminal-title,.terminal-tabs span,.terminal-screen,.project-filters button,.project-media>span,.tech-list span,.project-info>a,.private-label,.case-button,.about-card h2,.fact small,.location,.duration,.contact-links span,.form-top,.contact-form label,.footer-container{font-size:max(.62rem,11px)}
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+/* High-contrast light mode. */
+[data-theme="light"]{--ink:#f3f8ff;--panel:#ffffff;--panel2:#e4f0ff;--line:rgba(8,62,120,.3);--text:#06182d;--muted:#3d5872;--cyan:#006eb8;--blue:#234fc2;--green:#00745f}
+[data-theme="light"] body{color:var(--text)}
+[data-theme="light"] .eyebrow,[data-theme="light"] .text-link,[data-theme="light"] .project-info>a,[data-theme="light"] .case-button:hover{color:#005f9f}
+[data-theme="light"] .nav-logo,[data-theme="light"] .nav-menu>a.active,[data-theme="light"] .nav-menu>a:hover{color:#06182d}
+[data-theme="light"] .nav-menu>a,[data-theme="light"] .space-taskbar span,[data-theme="light"] .signal span,[data-theme="light"] .portrait-caption small,[data-theme="light"] .portrait-coordinate,[data-theme="light"] .panel-label,[data-theme="light"] .project-description,[data-theme="light"] .about-card p,[data-theme="light"] .intro-layout p,[data-theme="light"] .timeline-content ul,[data-theme="light"] .contact-copy>p,[data-theme="light"] .footer-container{color:#3d5872}
+[data-theme="light"] .signal strong,[data-theme="light"] .portrait-caption b,[data-theme="light"] .about-card h3,[data-theme="light"] .project-info h2,[data-theme="light"] .timeline-content h2,[data-theme="light"] .fact strong{color:#06182d}
+[data-theme="light"] .tech-item,[data-theme="light"] .tech-list span,[data-theme="light"] .identity-switcher button,[data-theme="light"] .project-filters button{color:#254b6d;border-color:rgba(8,62,120,.3)}
+[data-theme="light"] input,[data-theme="light"] textarea{color:#06182d}
+[data-theme="light"] input::placeholder,[data-theme="light"] textarea::placeholder{color:#58728a}
+[data-theme="light"] .button:not(.button-primary){background:rgba(255,255,255,.72);color:#06182d;border-color:rgba(8,62,120,.35)}
+[data-theme="light"] .project-card,[data-theme="light"] .about-card,[data-theme="light"] .timeline-content,[data-theme="light"] .fact,[data-theme="light"] .contact-form{border-color:rgba(8,62,120,.25)}
+
+/* Cohesive display typography across every page. */
+h1,h2,h3,.hero-copy h1,.page-header h1,.section-heading h2,.deck-heading h2,.talk-dock h2,.about-title h1,.facts-heading h2,.stack-heading h2,.about-card h3,.stack-group h3,.timeline-content h2,.resume-section h2,.project-info h2,.modal-copy h2,.contact-copy h1,.not-found h1{font-family:"Space Grotesk",sans-serif!important}

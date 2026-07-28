@@ -3,6 +3,17 @@ import './Work.css';
 
 const workExperiences = [
   {
+    role: "Associate Software Engineer",
+    company: "Omniscience",
+    location: "Houston, TX",
+    duration: "Present",
+    responsibilities: [
+      "Contribute to the Data Ingestion Team, building software that supports the ingestion and processing of clinical data.",
+      "Develop and maintain reliable data workflows that prepare complex healthcare information for downstream platform use.",
+      "Collaborate with engineers across the data platform to improve clarity, reliability, and maintainability."
+    ]
+  },
+  {
     role: "Teaching Assistant",
     company: "Rice University",
     location: "Houston, TX",
@@ -60,10 +71,11 @@ const workExperiences = [
 
 const WorkExperience = () => {
   return (
-    <div className="work-container">
-      <header>
-        <h1>Professional Experience</h1>
-        <p>Here is a summary of my professional journey and the roles I've undertaken. Scroll through the timeline to learn more about my responsibilities and achievements.</p>
+    <main className="work-container page-shell">
+      <header className="page-header">
+        <p className="eyebrow">ENGINEERING LOG // 02</p>
+        <h1>Building where software meets healthcare.</h1>
+        <p>Biomedical AI, healthcare data infrastructure, full-stack engineering, and technical teaching—work grounded in reliable systems and measurable impact.</p>
       </header>
 
       <section className="timeline">
@@ -90,10 +102,10 @@ const WorkExperience = () => {
         <h2>Want to Learn More?</h2>
         <p>For a more detailed overview of my experience, feel free to download my resume below.</p>
         <a href="/MRResume.pdf" className="resume-button" download>
-          <i className="fas fa-file-download"></i> Download My Resume
+          <span>Download my résumé</span><b>↓</b>
         </a>
       </div>
-    </div>
+    </main>
   );
 }
 

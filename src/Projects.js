@@ -1,99 +1,28 @@
-import React from 'react';
-import './Projects.css'; 
+import React,{useState} from 'react';
+import './Projects.css';
 
-function Projects() {
-  const projects = [
-    {
-      title: "RDT Ticketing Application",
-      description: "Developed an innovative ticketing platform for Rice Dance Theatre with Rice App Development Club RiceApps, leveraging advanced web technologies for a seamless user experience.",
-      technologies: ["MongoDB", "HTML/CSS", "JavaScript", "Node.js"],
-      images: ["/rdt-ticketing2.png"],
-      codeLink: "https://github.com/rice-apps/rdt-ticketing/tree/main/client",
-    },
-    {
-      title: "Analyzing Reported FDA Adverse Events",
-      description: "Collaborated on a data science initiative to examine safety risks in consumer products using FDA's Adverse Event Reporting System data.",
-      technologies: ["Python", "Numpy", "Pandas", "Sci-Kit Learn"],
-      images: ["/fda-adverse-events3.png"],
-      codeLink: "https://devpost.com/software/analysing-reported-fda-adverse-events-of-consumer-products?ref_content=user-portfolio&ref_feature=in_progress",
-    },
-    {
-      title: "Concurrent Web Proxy",
-      description: "Developed a concurrent web proxy using threads to handle multiple client requests and implemented logging to analyze traffic patterns.",
-      technologies: ["C", "Networking", "Concurrency"],
-      images: ["/proxy.png"],
-      codeLink: "https://github.com/meaghanramlakhan8/concurrent-web-proxy",
-    },
-    {
-      title: "Locality-Sensitive Hashing for Text Similarity",
-      description: "Researched and implemented Locality-Sensitive Hashing (LSH) methods (Signed Random Projections and K-means LSH) to efficiently approximate nearest neighbor searches in high-dimensional text data.",
-      technologies: ["Python", "Scikit-learn", "NumPy", "Matplotlib"],
-      images: ["/compute_lsh_precisions.png"],
-      codeLink: "https://github.com/meaghanramlakhan8/Locality-Sensitive-Hashing-Analysis-for-Text-Similarity-Search", // Replace with actual link
-    },
-    {
-      title: "OwlDB and M3ssag1n8 Web Application",
-      description: "Designed and implemented OwlDB, a network-accessible NoSQL document database using Go, serving as the backend for M3ssag1n8, a real-time messaging application. The system provides robust JSON document storage with features like atomic transactions and event-driven updates, integrated seamlessly with the TypeScript front-end client.",
-      technologies: ["HTML", "CSS", "TypeScript", "OwlDB"],
-      images: ["/messaging.png"],
-      codeLink: "",
-    },
-    {
-      title: "Hypertension-related Cardiovascular Disease Mortality Analysis",
-      description: "Explored hypertension-related CVD mortality trends among US adults, focusing on demographic, geographic, and health insurance factors. Utilized advanced statistical methods and data visualization to uncover disparities and temporal trends.",
-      technologies: ["R", "dplyr", "ggplot2", "SQL"],
-      images: ["/image.png"],
-      codeLink: "https://github.com/your-repo/hypertension-cvd-analysis", // Replace with actual link
-    },
-    {
-    title: "BRAINCELL-AID Biomedical Annotation Platform",
-    description: "Extended the BRAINCELL-AID web platform by designing Python/MySQL pipelines for automated data ingestion and processing of 5,000+ cell records, and building interactive data visualizations to support 100+ users.",
-    technologies: ["Python", "MySQL", "Data Visualization", "Pipelines"],
-    images: ["/braincell-aid.png"],
-    codeLink: "https://biodataai.uth.edu/BRAINCELL-AID/BRAINCELL-AID.py",
-    },
-  ];
+const projects=[
+ {title:'RDT Ticketing Application',category:'Full Stack',icon:'🎟️',description:'A ticketing platform for Rice Dance Theatre with show listings, seat availability, and ticket management.',technologies:['MongoDB','JavaScript','Node.js'],link:'https://github.com/rice-apps/rdt-ticketing/tree/main/client'},
+ {title:'FDA Adverse Events',category:'Data Science',icon:'🧪',description:'Analyzed consumer-product safety reports to identify risk patterns in FDA adverse-event data.',technologies:['Python','Pandas','Scikit-learn'],link:'https://devpost.com/software/analysing-reported-fda-adverse-events-of-consumer-products?ref_content=user-portfolio&ref_feature=in_progress'},
+ {title:'Concurrent Web Proxy',category:'Systems',icon:'🌐',description:'A multithreaded web proxy with concurrent request handling and traffic logging.',technologies:['C','Networking','Concurrency'],link:'https://github.com/meaghanramlakhan8/concurrent-web-proxy'},
+ {title:'Locality-Sensitive Hashing',category:'Machine Learning',icon:'🔎',description:'Benchmarked LSH methods for approximate nearest-neighbor search across high-dimensional text data.',technologies:['Python','NumPy','Scikit-learn'],link:'https://github.com/meaghanramlakhan8/Locality-Sensitive-Hashing-Analysis-for-Text-Similarity-Search'},
+ {title:'OwlDB + M3ssag1n8',category:'Systems',icon:'🦉',description:'A concurrent NoSQL document database powering a real-time messaging application.',technologies:['Go','TypeScript','SSE']},
+ {title:'CVD Mortality Analysis',category:'Data Science',icon:'🫀',description:'Explored hypertension-related mortality trends across demographic, geographic, and insurance factors.',technologies:['R','ggplot2','SQL']},
+ {title:'BRAINCELL-AID',category:'Healthcare Tech',icon:'🧠',description:'Python/MySQL pipelines and interactive visualizations for 5,000+ biomedical cell records.',technologies:['Python','MySQL','Data Viz'],link:'https://biodataai.uth.edu/BRAINCELL-AID/BRAINCELL-AID.py'},
+];
+const filters=['All','Full Stack','Systems','Data Science','Machine Learning','Healthcare Tech'];
 
-  return (
-    <div className="projects-container">
-      <h1 className="projects-header">My Projects</h1>
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div className="project-card" key={index}>
-            <div className="project-media">
-              {project.images && Array.isArray(project.images) ? (
-                <div className="image-gallery">
-                  {project.images.map((image, imgIndex) => (
-                    <img src={image} alt={`${project.title} screenshot ${imgIndex + 1}`} key={imgIndex} className="project-image" />
-                  ))}
-                </div>
-              ) : (
-                <iframe
-                  className="project-video"
-                  src={project.videoLink}
-                  title={project.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              )}
-            </div>
-            <div className="project-info">
-              <h2 className="project-title">{project.title}</h2>
-              <p className="project-description">{project.description}</p>
-              <div className="tech-list">
-                {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="tech-item">{tech}</span>
-                ))}
-              </div>
-              <a href={project.codeLink} className="project-link" target="_blank" rel="noopener noreferrer">
-                View Code
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+export default function Projects(){
+ const[active,setActive]=useState('All');
+ const[selected,setSelected]=useState(null);
+ const visible=active==='All'?projects:projects.filter(project=>project.category===active);
+ return <main className="projects-container page-shell">
+  <header className="projects-header page-header"><p className="eyebrow">PROJECTS.JSON // {String(projects.length).padStart(2,'0')} OBJECTS</p><h1>Things I’ve built and investigated.</h1><p>Filter through full-stack products, systems work, data investigations, machine learning, and healthcare technology.</p></header>
+  <div className="project-filters" role="group" aria-label="Filter projects">{filters.map(filter=><button className={active===filter?'active':''} onClick={()=>setActive(filter)} key={filter}><span>{filter}</span><b>{filter==='All'?projects.length:projects.filter(p=>p.category===filter).length}</b></button>)}</div>
+  <div className="projects-grid">{visible.map((project,index)=><article className="project-card" key={project.title}>
+   <div className="project-media"><div className="project-glyph" aria-hidden="true"><i/><i/><strong>{project.icon}</strong><small>{project.category}</small></div><span>{String(index+1).padStart(2,'0')} / {project.category}</span></div>
+   <div className="project-info"><h2>{project.title}</h2><p>{project.description}</p><div className="tech-list">{project.technologies.map(tech=><span key={tech}>{tech}</span>)}</div><button className="case-button" onClick={()=>setSelected(project)}>Open case study <span>⌘ ↗</span></button>{project.link?<a href={project.link} target="_blank" rel="noreferrer">Inspect project <span>↗</span></a>:<span className="private-label">COURSE PROJECT // PRIVATE REPO</span>}</div>
+  </article>)}</div>
+  {selected&&<div className="case-modal-backdrop" onMouseDown={()=>setSelected(null)}><section className="case-modal" role="dialog" aria-modal="true" aria-label={`${selected.title} case study`} onMouseDown={e=>e.stopPropagation()}><header><span>CASE_STUDY.MD // {selected.category}</span><button onClick={()=>setSelected(null)} aria-label="Close case study">ESC ×</button></header><div className="case-modal-grid"><div className="modal-visual"><img src={selected.image} alt=""/><div><span>STATUS</span><b>✓ COMPLETE</b></div></div><div className="modal-copy"><p className="eyebrow">TECHNICAL DEEP DIVE</p><h2>{selected.title}</h2><p>{selected.description}</p><div className="case-detail"><span>01 / PROBLEM</span><p>Transform a technically complex workflow into a reliable, usable system with clear data flow and maintainable components.</p></div><div className="case-detail"><span>02 / ENGINEERING</span><p>Designed and implemented the core workflow using {selected.technologies.join(', ')}, balancing correctness, performance, and usability.</p></div><div className="case-detail"><span>03 / RESULT</span><p>Delivered a working {selected.category.toLowerCase()} project with tested functionality and a clear path for iteration.</p></div><div className="tech-list">{selected.technologies.map(tech=><span key={tech}>{tech}</span>)}</div>{selected.link&&<a className="button button-primary" href={selected.link} target="_blank" rel="noreferrer">View source <span>↗</span></a>}</div></div></section></div>}
+ </main>
 }
-
-export default Projects;
