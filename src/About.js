@@ -14,7 +14,7 @@ const stackGroups=[
 export default function About(){return <main className="about-container page-shell">
  <header className="about-intro page-header">
   <p className="eyebrow">ABOUT.ME // 01</p>
-  <div className="about-title"><h1>Engineer, educator,<br/>curious human.</h1><span>3.8 GPA<br/>RICE ’26</span></div>
+  <div className="about-title"><h1>Engineer, educator,<br/>curious human.</h1></div>
   <div className="intro-layout">
    <p className="intro-lead">I’m Meaghan Ramlakhan, an Associate Software Engineer at Omniscience and recent Rice computer science graduate who likes turning complicated ideas into software people can actually use.</p>
    <p>I currently work on the Data Ingestion Team, building software around clinical data. More broadly, I work across full-stack development, systems, data, and machine learning. I grew up in Trinidad and Tobago and now call Houston home. Whether I’m designing a database, improving a data workflow, or helping a student untangle an algorithm, I care about clarity, reliability, and building with people in mind.</p>
