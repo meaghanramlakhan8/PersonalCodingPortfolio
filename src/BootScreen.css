@@ -1,1 +1,12 @@
 .boot-screen{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#02050b;animation:bootExit .35s ease 1.82s forwards}.boot-console{width:min(580px,calc(100% - 35px));font:500 .72rem/1.8 DM Mono;color:#6d8ba3}.boot-logo{margin-bottom:30px;color:#eaf7ff;font:700 2rem DM Mono}.boot-logo span{color:var(--cyan)}.boot-console p{display:grid;grid-template-columns:18px 1fr auto;margin:7px 0}.boot-console p>span{color:var(--cyan)}.boot-console p>b{color:var(--green);font-size:.56rem}.boot-progress{height:3px;margin:28px 0 12px;background:#0d2031}.boot-progress i{display:block;height:100%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);transition:width .25s}.boot-console small{color:#334e63;font-size:.54rem}@keyframes bootExit{to{opacity:0;visibility:hidden}}
+
+/* Centered startup modal instead of an in-page loading block. */
+.boot-screen{position:fixed!important;inset:0!important;z-index:99998!important;padding:20px;background:rgba(1,6,18,.72);backdrop-filter:blur(9px)}
+.boot-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(53,217,255,.11),transparent 38%),radial-gradient(rgba(157,223,255,.35) .6px,transparent .6px);background-size:auto,34px 34px}
+.boot-console{position:relative;width:min(590px,100%);padding:34px 38px;border:1px solid rgba(53,217,255,.42);background:#020713;box-shadow:0 30px 100px rgba(0,0,0,.65),inset 0 0 60px rgba(53,217,255,.035);animation:bootPop .42s cubic-bezier(.2,1.35,.4,1) both}
+.boot-console:before,.boot-console:after{content:"";position:absolute;width:18px;height:18px}.boot-console:before{left:-1px;top:-1px;border-left:3px solid var(--cyan);border-top:3px solid var(--cyan)}.boot-console:after{right:-1px;bottom:-1px;border-right:3px solid var(--cyan);border-bottom:3px solid var(--cyan)}
+.boot-logo{margin-bottom:22px}
+@keyframes bootPop{from{opacity:0;transform:translateY(30px) scale(.88)}to{opacity:1;transform:none}}
+[data-theme="light"] .boot-screen{background:rgba(228,240,255,.72)}
+[data-theme="light"] .boot-console{background:#020713}
+@media(max-width:600px){.boot-console{padding:27px 22px;font-size:.62rem}.boot-console p{grid-template-columns:15px 1fr auto}}
