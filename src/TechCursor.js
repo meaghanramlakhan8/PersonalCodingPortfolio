@@ -6,6 +6,7 @@ export default function TechCursor(){
  const ringRef=useRef(null);
 
  useEffect(()=>{
+  if(typeof window.matchMedia!=='function')return undefined;
   const finePointer=window.matchMedia('(pointer: fine)');
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
   if(!finePointer.matches||reducedMotion.matches)return undefined;
