@@ -25,7 +25,7 @@ export default function Home(){
   </div>
   <aside className="portrait-side">
    <div className="portrait-orbit"><i/><i/><span>01</span></div>
-   <div className="portrait-frame"><img src="/photo.png" alt="Meaghan Ramlakhan"/><div className="portrait-scan"/></div>
+   <div className="portrait-frame"><img src="/photo.webp" alt="Meaghan Ramlakhan" width="801" height="1200" decoding="async" fetchpriority="high"/><div className="portrait-scan"/></div>
    <div className="portrait-caption"><span>MEAGHAN.RAMLAKHAN</span><b>SOFTWARE ENGINEER</b><small>RECENT RICE GRADUATE</small></div>
    <span className="portrait-coordinate top">29.7604° N</span><span className="portrait-coordinate bottom">095.3698° W</span>
   </aside>
