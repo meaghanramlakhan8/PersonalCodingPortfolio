@@ -3,13 +3,75 @@ import './EasterEggs.css';
 
 const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
 const EGGS = {
-  konami:{level:'ACCESS_LEVEL // COSMIC',icon:'🎮',title:'Sequence accepted.',message:'You found the classic developer handshake. Curiosity is an engineering skill.',command:'konami.execute --player=one',output:'CHEAT MODE ENABLED // +30 NERD CRED ✓',achievement:'01 / KEYBOARD ASTRONAUT'},
-  launch:{level:'MISSION_CONTROL // HOUSTON',icon:'🚀',title:'We have liftoff.',message:'Launch clearance granted from Houston, Space City. Your curiosity is officially in orbit.',command:'launch --origin=houston --destination=unknown',output:'T–0 // TRAJECTORY NOMINAL // LIFTOFF ✓',achievement:'02 / SPACE CITY PILOT'},
-  coffee:{level:'RUNTIME // CAFFEINATED',icon:'☕',title:'Java initialized.',message:'Emergency developer fuel compiled successfully. Side effects may include shipping excellent code.',command:'brew coffee --strength=max',output:'CAFFEINE BUFFER ██████████ 100% ✓',achievement:'03 / PRODUCTION BREWER'},
-  trinidad:{level:'ORIGIN_NODE // CARIBBEAN',icon:'🇹🇹',title:'Island mode online.',message:'A little Trinidad and Tobago energy has entered the system—from the Caribbean to Space City.',command:'locate --home --verbose',output:'TRINIDAD & TOBAGO // SIGNAL STRONG ✓',achievement:'04 / ISLAND PACKET'},
-  rice:{level:'CAMPUS_PROTOCOL // RICE',icon:'🦉',title:'Owl protocol active.',message:'Rice University credentials verified. The system is now operating at maximum hoot capacity.',command:'sudo awaken-owl',output:'HOOT HOOT // RICE CS MODE ENABLED ✓',achievement:'05 / CODE OWL'},
-  'meaning-of-life':{level:'DEEP_THOUGHT // COMPLETE',icon:'42',title:'Answer computed.',message:'After 7.5 million years of processing, the system has reached a completely unsurprising result.',command:'universe.query --everything',output:'RESULT: 42 // QUESTION STILL PENDING',achievement:'06 / GALACTIC DEBUGGER'},
-  'sudo hire me':{level:'PERMISSION // GRANTED',icon:'💼',title:'Excellent decision.',message:'Root access approved. Collaborative software-engineering mode is ready to deploy.',command:'sudo hire meaghan --immediately',output:'CANDIDATE STATUS // ABSOLUTELY ✓',achievement:'07 / TALENT ACQUISITION HACKER'}
+  konami:{
+    level:'ACCESS_LEVEL // COSMIC',
+    icon:'🎮',
+    title:'Sequence accepted.',
+    message:'You found the classic developer handshake. Thanks for exploring a little deeper.',
+    command:'konami.execute --player=one',
+    output:'BONUS MODE ENABLED ✓',
+    achievement:'01 / KEYBOARD ASTRONAUT'
+  },
+
+  launch:{
+    level:'MISSION_CONTROL // HOUSTON',
+    icon:'🚀',
+    title:'We have liftoff.',
+    message:'Launch clearance granted from Houston. The destination is still being mapped.',
+    command:'launch --origin=houston --destination=unknown',
+    output:'T–0 // TRAJECTORY NOMINAL // LIFTOFF ✓',
+    achievement:'02 / SPACE CITY PILOT'
+  },
+
+  coffee:{
+    level:'RUNTIME // CAFFEINATED',
+    icon:'☕',
+    title:'Java initialized.',
+    message:'Developer fuel successfully added to the system. Proceed accordingly.',
+    command:'brew coffee --strength=max',
+    output:'CAFFEINE BUFFER ██████████ 100% ✓',
+    achievement:'03 / PRODUCTION BREWER'
+  },
+
+  trinidad:{
+    level:'ORIGIN_NODE // CARIBBEAN',
+    icon:'🇹🇹',
+    title:'Island mode online.',
+    message:'A little Trinidad and Tobago energy, transmitted from the Caribbean to Space City.',
+    command:'locate --home --verbose',
+    output:'TRINIDAD & TOBAGO // SIGNAL STRONG ✓',
+    achievement:'04 / ISLAND PACKET'
+  },
+
+  rice:{
+    level:'CAMPUS_PROTOCOL // RICE',
+    icon:'🦉',
+    title:'Owl protocol active.',
+    message:'Rice University connection verified. The system may now produce occasional hooting.',
+    command:'sudo awaken-owl',
+    output:'RICE CS MODE ENABLED ✓',
+    achievement:'05 / CODE OWL'
+  },
+
+  'meaning-of-life':{
+    level:'DEEP_THOUGHT // COMPLETE',
+    icon:'42',
+    title:'Answer computed.',
+    message:'The answer is ready. The exact question remains unresolved.',
+    command:'universe.query --everything',
+    output:'RESULT: 42 // QUESTION STILL PENDING',
+    achievement:'06 / GALACTIC DEBUGGER'
+  },
+
+  'sudo hire me':{
+    level:'PERMISSION // GRANTED',
+    icon:'💼',
+    title:'Command received.',
+    message:'You found the unofficial shortcut. The official route starts with a conversation.',
+    command:'sudo hire meaghan --immediately',
+    output:'CONNECTION REQUEST READY ✓',
+    achievement:'07 / RECRUITER MODE'
+  }
 };
 
 export default function EasterEggs(){

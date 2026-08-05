@@ -11,7 +11,16 @@ export default function Home(){
  const[selectedNode,setSelectedNode]=useState('BACKEND');
  const[identityMode,setIdentityMode]=useState('engineer');
  const nodes={BACKEND:'Go, Node.js · REST APIs · concurrent services',ML:'TensorFlow, PyTorch · prediction and similarity',DATA:'Clinical data ingestion · SQL, NoSQL · reliable pipelines',FRONTEND:'React, TypeScript · usable product interfaces'};
- const identities={engineer:'Associate Software Engineer at Omniscience, working on the Data Ingestion Team with clinical data and reliable software workflows.',graduate:'Recent Rice University computer science graduate with minors in Data Science and Statistics and a 3.8 GPA.',human:'Trinidadian in Houston who loves mentoring, exploring great food spots, and solving the complicated kind of problem.'};
+const identities = {
+  engineer:
+    'Associate Software Engineer at Omniscience, building reliable data-ingestion workflows for complex clinical data.',
+
+  graduate:
+    'Recent Rice University computer science graduate with minors in Data Science and Statistics and a 3.9 GPA.',
+
+  human:
+    'Originally from Trinidad and Tobago, now based in Houston, with a love for mentoring, exploring great food spots, and solving challenging problems.',
+};
  const runCommand=e=>{e.preventDefault();const typedCommand=command.trim().toLowerCase();if(!typedCommand)return;const cmd=typedCommand==='whoami'||typedCommand==='whoami()'?'who_am_i':typedCommand;const outputs={help:'Commands: who_am_i · skills · projects · resume · contact · ls · clear · sudo hire me · help --all',who_am_i:'Meaghan Ramlakhan — software engineer, Rice CS graduate, curious human.',skills:'Python  Java  TypeScript  Go  React  Node.js  TensorFlow  SQL  AWS',projects:'7 projects indexed. Use ⌘K and choose “Browse projects” →',resume:'Opening MRResume.pdf in a new tab… ✓',contact:'Channel open: meaghan.c.ramlakhan@rice.edu',ls:'about.md  experience/  projects/  MRResume.pdf  contact.txt','sudo hire me':'Permission granted. Excellent decision. 🚀','help --all':'CLASSIFIED: launch · coffee · trinidad · rice · meaning-of-life','launch':'T–3… 2… 1… Liftoff from Houston, Space City! 🚀','coffee':'Compiling caffeine… ██████████ 100%  ☕','trinidad':'Home coordinates acquired. Trinidad & Tobago mode activated. 🇹🇹','rice':'Owl protocol online. Hoot hoot! 🦉','meaning-of-life':'42. Obviously.'};const secretCommands=['launch','coffee','trinidad','rice','meaning-of-life','sudo hire me'];if(cmd==='resume')window.open('/MRResume.pdf','_blank','noopener,noreferrer');if(cmd==='clear'){setHistory([])}else{setHistory(items=>[...items,{command:cmd,output:outputs[cmd]||`zsh: command not found: ${cmd}. Try "help".`}])}setCommand('');setHistoryIndex(-1);if(secretCommands.includes(cmd))window.setTimeout(()=>window.dispatchEvent(new CustomEvent('mcr:easter-egg',{detail:{command:cmd}})),120)};
  const terminalKeys=e=>{const commands=['help','who_am_i','skills','projects','resume','contact','ls','clear','sudo hire me','help --all','launch','coffee','trinidad','rice','meaning-of-life'];const past=history.map(item=>item.command);if(e.key==='Tab'){e.preventDefault();const match=commands.find(item=>item.startsWith(command.toLowerCase()));if(match)setCommand(match)}if(e.key==='ArrowUp'&&past.length){e.preventDefault();const next=Math.min(historyIndex+1,past.length-1);setHistoryIndex(next);setCommand(past[past.length-1-next])}if(e.key==='ArrowDown'){e.preventDefault();const next=historyIndex-1;setHistoryIndex(next);setCommand(next<0?'':past[past.length-1-next])}};
  return <main className="home page-shell">
@@ -55,7 +64,19 @@ export default function Home(){
  </section>
 
  <section className="talk-dock">
-  <div><p className="eyebrow"><span className="status-dot"/> AVAILABLE FOR THE NEXT ADVENTURE</p><h2>Have an interesting problem?</h2><p>I’m always happy to talk software, systems, data—or Houston’s best food spots.</p></div>
+  <div>
+  <p className="eyebrow">
+    <span className="status-dot" />
+    ALWAYS LEARNING, ALWAYS BUILDING
+  </p>
+
+  <h2>Say hello.</h2>
+
+  <p>
+    I’m always glad to connect over software, data, teaching, or a good Houston
+    activity recommendation.
+  </p>
+</div>
   <Link to="/contact">LET’S TALK <span>↗</span></Link>
   <div className="dock-orbit" aria-hidden="true"><i/><i/><i/></div>
  </section>

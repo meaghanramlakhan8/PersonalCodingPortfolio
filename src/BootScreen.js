@@ -1,4 +1,126 @@
-import React,{useEffect,useState} from 'react';
+import { useEffect, useState } from 'react';
 import './BootScreen.css';
-const lines=['initializing portfolio.kernel...','loading profile/meaghan.json...','mounting projects/ and experience/...','connecting to Houston ground station...','all systems nominal.'];
-export default function BootScreen(){const[visible,setVisible]=useState(()=>!sessionStorage.getItem('portfolio-booted'));const[count,setCount]=useState(0);useEffect(()=>{if(!visible)return;const a=setInterval(()=>setCount(v=>Math.min(v+1,lines.length)),280);const b=setTimeout(()=>{setVisible(false);sessionStorage.setItem('portfolio-booted','true')},2100);return()=>{clearInterval(a);clearTimeout(b)}},[visible]);if(!visible)return null;return <div className="boot-screen" aria-label="Initializing portfolio"><div className="boot-console"><div className="boot-logo">&lt;MCR<span>/</span>&gt;</div>{lines.slice(0,count).map((line,index)=><p key={line}><span>{index===lines.length-1?'✓':'›'}</span>{line}<b>{index===lines.length-1?'DONE':'OK'}</b></p>)}<div className="boot-progress"><i style={{width:`${Math.min(count/lines.length*100,100)}%`}}/></div><small>PORTFOLIO OS // BUILD 2026.07</small></div></div>}
+
+const BOOT_LINES = [
+  'initializing portfolio.kernel...',
+  'loading profile/meaghan.json...',
+  'indexing projects/, experience/, and skills/...',
+  'connecting to Houston ground station...',
+  'portfolio ready. all systems nominal.',
+];
+
+const STORAGE_KEY = 'portfolio-booted';
+const LINE_DELAY_MS = 300;
+const EXIT_DELAY_MS = 650;
+
+function hasBootedThisSession() {
+  if (typeof window === 'undefined') return true;
+
+  try {
+    return window.sessionStorage.getItem(STORAGE_KEY) === 'true';
+  } catch {
+    return false;
+  }
+}
+
+function saveBootState() {
+  try {
+    window.sessionStorage.setItem(STORAGE_KEY, 'true');
+  } catch {
+    // Continue normally if session storage is unavailable.
+  }
+}
+
+export default function BootScreen() {
+  const [isVisible, setIsVisible] = useState(
+    () => !hasBootedThisSession()
+  );
+  const [visibleLineCount, setVisibleLineCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return undefined;
+
+    const intervalId = window.setInterval(() => {
+      setVisibleLineCount((currentCount) => {
+        const nextCount = Math.min(
+          currentCount + 1,
+          BOOT_LINES.length
+        );
+
+        if (nextCount === BOOT_LINES.length) {
+          window.clearInterval(intervalId);
+        }
+
+        return nextCount;
+      });
+    }, LINE_DELAY_MS);
+
+    const totalDuration =
+      BOOT_LINES.length * LINE_DELAY_MS + EXIT_DELAY_MS;
+
+    const exitTimeoutId = window.setTimeout(() => {
+      saveBootState();
+      setIsVisible(false);
+    }, totalDuration);
+
+    return () => {
+      window.clearInterval(intervalId);
+      window.clearTimeout(exitTimeoutId);
+    };
+  }, [isVisible]);
+
+  if (!isVisible) return null;
+
+  const progress = Math.round(
+    (visibleLineCount / BOOT_LINES.length) * 100
+  );
+
+  return (
+    <div
+      className="boot-screen"
+      role="status"
+      aria-live="polite"
+      aria-label="Initializing Meaghan Ramlakhan’s portfolio"
+    >
+      <div className="boot-console">
+        <div className="boot-logo" aria-hidden="true">
+          &lt;MCR<span>/</span>&gt;
+        </div>
+
+        <div className="boot-output">
+          {BOOT_LINES.slice(0, visibleLineCount).map(
+            (line, index) => {
+              const isFinalLine =
+                index === BOOT_LINES.length - 1;
+
+              return (
+                <p key={line}>
+                  <span aria-hidden="true">
+                    {isFinalLine ? '✓' : '›'}
+                  </span>
+
+                  <span>{line}</span>
+
+                  <b>{isFinalLine ? 'DONE' : 'OK'}</b>
+                </p>
+              );
+            }
+          )}
+        </div>
+
+        <div
+          className="boot-progress"
+          role="progressbar"
+          aria-label="Portfolio loading progress"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={progress}
+        >
+          <i style={{ width: `${progress}%` }} />
+        </div>
+
+        <small>PORTFOLIO OS // BUILD 2026.07</small>
+      </div>
+    </div>
+  );
+}

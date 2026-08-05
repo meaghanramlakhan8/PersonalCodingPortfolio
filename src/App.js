@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About'; // Ensure the file name matches exactly
 import Work from './Work';
 import Projects from './Projects';
+import Publications from './Publications';
 import Footer from './footer'; // Ensure the file name matches exactly
 import Contact from './Contact';
 import Navbar from './Navbar';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Work />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

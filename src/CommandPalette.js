@@ -12,6 +12,7 @@ export default function CommandPalette(){
   {icon:'◎',label:'About Meaghan',hint:'About',run:()=>navigate('/about')},
   {icon:'⌁',label:'View experience',hint:'Work',run:()=>navigate('/work')},
   {icon:'◇',label:'Browse projects',hint:'Projects',run:()=>navigate('/projects')},
+  {icon:'▤',label:'Read publications',hint:'Research',run:()=>navigate('/publications')},
   {icon:'✉',label:'Start a conversation',hint:'Contact',run:()=>navigate('/contact')},
   {icon:'↓',label:'Download résumé',hint:'PDF',run:()=>{window.location.href='/MRResume.pdf'}},
   {icon:'⌘',label:'Open GitHub',hint:'External',run:()=>window.open('https://github.com/meaghanramlakhan8','_blank')},

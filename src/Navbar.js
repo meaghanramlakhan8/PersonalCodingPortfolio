@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {Link,NavLink} from 'react-router-dom';
 import './navbar.css';
 
-const links=[['/','Home'],['/about','About'],['/work','Experiences'],['/projects','Projects'],['/contact','Contact']];
+const links=[['/','Home'],['/about','About'],['/work','Experiences'],['/projects','Projects'],['/publications','Publications'],['/contact','Contact']];
 const spaceItems=[['◉','HOUSTON, SPACE CITY'],['✦','29.7604° N'],['⌁','SYSTEMS ONLINE'],['◌','UTC −05:00'],['↗','OPEN TO CONNECT']];
 
 export default function Navbar(){

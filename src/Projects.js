@@ -7,8 +7,9 @@ const projects=[
  {title:'Concurrent Web Proxy',category:'Systems',icon:'🌐',description:'A multithreaded web proxy with concurrent request handling and traffic logging.',technologies:['C','Networking','Concurrency'],link:'https://github.com/meaghanramlakhan8/concurrent-web-proxy'},
  {title:'Locality-Sensitive Hashing',category:'Machine Learning',icon:'🔎',description:'Benchmarked LSH methods for approximate nearest-neighbor search across high-dimensional text data.',technologies:['Python','NumPy','Scikit-learn'],link:'https://github.com/meaghanramlakhan8/Locality-Sensitive-Hashing-Analysis-for-Text-Similarity-Search'},
  {title:'OwlDB + M3ssag1n8',category:'Systems',icon:'🦉',description:'A concurrent NoSQL document database powering a real-time messaging application.',technologies:['Go','TypeScript','SSE']},
+ {title:'Global Health Disparities',category:'Data Science',icon:'🌍',description:'Investigated how health, economic, and social factors influence life expectancy using WHO and United Nations data.',technologies:['Regression','Statistical Modeling','Data Viz']},
+ {title:'Genome Read-Mapping Pipeline',category:'Healthcare Tech',icon:'🧬',description:'Built a bioinformatics pipeline for mapping genomic sequencing reads to a reference genome while evaluating accuracy and computational tradeoffs.',technologies:['Python', 'Cython', 'Bioinformatics','Genome-Scaled Algorithms','Data Pipelines']},
  {title:'CVD Mortality Analysis',category:'Data Science',icon:'🫀',description:'Explored hypertension-related mortality trends across demographic, geographic, and insurance factors.',technologies:['R','ggplot2','SQL']},
- {title:'BRAINCELL-AID',category:'Healthcare Tech',icon:'🧠',description:'Python/MySQL pipelines and interactive visualizations for 5,000+ biomedical cell records.',technologies:['Python','MySQL','Data Viz'],link:'https://biodataai.uth.edu/BRAINCELL-AID/BRAINCELL-AID.py'},
 ];
 const filters=['All','Full Stack','Systems','Data Science','Machine Learning','Healthcare Tech'];
 
