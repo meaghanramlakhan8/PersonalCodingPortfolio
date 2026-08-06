@@ -14,25 +14,35 @@ const stackGroups = [
     items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Responsive Design'],
   },
   {
-    icon: '⚙️',
-    title: 'Backend & Systems',
-    items: ['Node.js', 'REST APIs', 'Concurrency', 'Server-Sent Events', 'Data Pipelines'],
-  },
-  {
-    icon: '🧠',
-    title: 'Data & Machine Learning',
-    items: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy', 'Data Visualization'],
-  },
-  {
-    icon: '🗄️',
-    title: 'Databases',
-    items: ['MySQL', 'MongoDB', 'DynamoDB', 'NoSQL'],
-  },
-  {
-    icon: '☁️',
-    title: 'Cloud & Tools',
-    items: ['AWS', 'Git', 'Linux'],
-  },
+  icon: '⚙️',
+  title: 'Backend & Systems',
+  items: [
+    'Django',
+    'Node.js',
+    'REST APIs',
+    'Concurrency',
+    'Server-Sent Events',
+    'Data Pipelines',
+  ],
+},
+{
+  icon: '🗄️',
+  title: 'Databases',
+  items: ['PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB', 'NoSQL'],
+},
+{
+  icon: '☁️',
+  title: 'Cloud, DevOps & Tools',
+  items: [
+    'AWS',
+    'Google Cloud Platform',
+    'Google Cloud Storage',
+    'Docker',
+    'Git',
+    'Linux',
+    'Jira',
+  ],
+},
 ];
 
 export default function About() {

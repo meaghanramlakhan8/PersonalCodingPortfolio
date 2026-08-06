@@ -8,9 +8,12 @@ export default function Home(){
  const[command,setCommand]=useState('');
  const[history,setHistory]=useState([{command:'help',output:'Commands: who_am_i · skills · projects · resume · contact · clear · sudo hire me · (some commands are undocumented)'}]);
  const[historyIndex,setHistoryIndex]=useState(-1);
+ const[activeTerminalTab,setActiveTerminalTab]=useState('terminal');
+ const[scriptOutput,setScriptOutput]=useState('');
  const[selectedNode,setSelectedNode]=useState('BACKEND');
  const[identityMode,setIdentityMode]=useState('engineer');
- const nodes={BACKEND:'Go, Node.js · REST APIs · concurrent services',ML:'TensorFlow, PyTorch · prediction and similarity',DATA:'Clinical data ingestion · SQL, NoSQL · reliable pipelines',FRONTEND:'React, TypeScript · usable product interfaces'};
+ const nodes={SOURCES:'Python · APIs · event-driven ingestion',INGESTION:'Python · validation and transformation',STORAGE:'PostgreSQL · Google Cloud Storage',BACKEND:'Django · Python · REST APIs',FRONTEND:'React · TypeScript · responsive interfaces',ML:'TensorFlow · PyTorch · model inference'};
+ const nodeLabels={SOURCES:'SOURCE DATA',INGESTION:'DATA PIPELINE',STORAGE:'DATA LAYER',BACKEND:'BACKEND SERVICE',FRONTEND:'WEB APPLICATION',ML:'ML SERVICE'};
 const identities = {
   engineer:
     'Associate Software Engineer at Omniscience, building reliable data-ingestion workflows for complex clinical data.',
@@ -21,8 +24,10 @@ const identities = {
   human:
     'Originally from Trinidad and Tobago, now based in Houston, with a love for mentoring, exploring great food spots, and solving challenging problems.',
 };
- const runCommand=e=>{e.preventDefault();const typedCommand=command.trim().toLowerCase();if(!typedCommand)return;const cmd=typedCommand==='whoami'||typedCommand==='whoami()'?'who_am_i':typedCommand;const outputs={help:'Commands: who_am_i · skills · projects · resume · contact · ls · clear · sudo hire me · help --all',who_am_i:'Meaghan Ramlakhan — software engineer, Rice CS graduate, curious human.',skills:'Python  Java  TypeScript  Go  React  Node.js  TensorFlow  SQL  AWS',projects:'7 projects indexed. Use ⌘K and choose “Browse projects” →',resume:'Opening MRResume.pdf in a new tab… ✓',contact:'Channel open: meaghan.c.ramlakhan@rice.edu',ls:'about.md  experience/  projects/  MRResume.pdf  contact.txt','sudo hire me':'Permission granted. Excellent decision. 🚀','help --all':'CLASSIFIED: launch · coffee · trinidad · rice · meaning-of-life','launch':'T–3… 2… 1… Liftoff from Houston, Space City! 🚀','coffee':'Compiling caffeine… ██████████ 100%  ☕','trinidad':'Home coordinates acquired. Trinidad & Tobago mode activated. 🇹🇹','rice':'Owl protocol online. Hoot hoot! 🦉','meaning-of-life':'42. Obviously.'};const secretCommands=['launch','coffee','trinidad','rice','meaning-of-life','sudo hire me'];if(cmd==='resume')window.open('/MRResume.pdf','_blank','noopener,noreferrer');if(cmd==='clear'){setHistory([])}else{setHistory(items=>[...items,{command:cmd,output:outputs[cmd]||`zsh: command not found: ${cmd}. Try "help".`}])}setCommand('');setHistoryIndex(-1);if(secretCommands.includes(cmd))window.setTimeout(()=>window.dispatchEvent(new CustomEvent('mcr:easter-egg',{detail:{command:cmd}})),120)};
+ const runCommand=e=>{e.preventDefault();const typedCommand=command.trim().toLowerCase();if(!typedCommand)return;const cmd=typedCommand==='whoami'||typedCommand==='whoami()'?'who_am_i':typedCommand;const outputs={help:'Commands: who_am_i · skills · projects · resume · contact · ls · clear · sudo hire me · help --all',who_am_i:'Meaghan Ramlakhan — software engineer, Rice CS graduate, always ready to learn.',skills:'Python  Java  TypeScript  Go  React  Node.js  TensorFlow  SQL  AWS',projects:'7 projects indexed. Use ⌘K and choose “Browse projects” →',resume:'Opening MRResume.pdf in a new tab… ✓',contact:'Channel open: meaghan.c.ramlakhan@rice.edu',ls:'about.md  experience/  projects/  MRResume.pdf  contact.txt','sudo hire me':'Permission granted. Excellent decision. 🚀','help --all':'CLASSIFIED: launch · coffee · trinidad · rice · meaning-of-life','launch':'T–3… 2… 1… Liftoff from Houston, Space City! 🚀','coffee':'Compiling caffeine… ██████████ 100%  ☕','trinidad':'Home coordinates acquired. Trinidad & Tobago mode activated. 🇹🇹','rice':'Owl protocol online. Hoot hoot! 🦉','meaning-of-life':'42. Obviously.'};const secretCommands=['launch','coffee','trinidad','rice','meaning-of-life','sudo hire me'];if(cmd==='resume')window.open('/MRResume.pdf','_blank','noopener,noreferrer');if(cmd==='clear'){setHistory([])}else{setHistory(items=>[...items,{command:cmd,output:outputs[cmd]||`zsh: command not found: ${cmd}. Try "help".`}])}setCommand('');setHistoryIndex(-1);if(secretCommands.includes(cmd))window.setTimeout(()=>window.dispatchEvent(new CustomEvent('mcr:easter-egg',{detail:{command:cmd}})),120)};
  const terminalKeys=e=>{const commands=['help','who_am_i','skills','projects','resume','contact','ls','clear','sudo hire me','help --all','launch','coffee','trinidad','rice','meaning-of-life'];const past=history.map(item=>item.command);if(e.key==='Tab'){e.preventDefault();const match=commands.find(item=>item.startsWith(command.toLowerCase()));if(match)setCommand(match)}if(e.key==='ArrowUp'&&past.length){e.preventDefault();const next=Math.min(historyIndex+1,past.length-1);setHistoryIndex(next);setCommand(past[past.length-1-next])}if(e.key==='ArrowDown'){e.preventDefault();const next=historyIndex-1;setHistoryIndex(next);setCommand(next<0?'':past[past.length-1-next])}};
+ const terminalTabs=[['terminal','terminal'],['readme','README.md'],['fun','fun_stuff.sh']];
+ const runFunScript=()=>{setScriptOutput('Scanning portfolio… 7 projects found. Curiosity level: 100%. Status: ready to build something great 🚀');window.setTimeout(()=>window.dispatchEvent(new CustomEvent('mcr:easter-egg',{detail:{command:'fun_stuff.sh'}})),120)};
  return <main className="home page-shell">
  <section className="hero">
   <div className="hero-copy">
@@ -47,19 +52,28 @@ const identities = {
   <div className="deck-heading"><div><p className="eyebrow">ENGINEERING CONSOLE // LIVE</p><h2>A peek under the hood.</h2></div><span className="lab-status"><i/> ALL SYSTEMS NOMINAL</span></div>
   <div className="lab-grid">
    <div className="architecture clean-architecture">
-    <p className="panel-label">SOFTWARE ARCHITECTURE // CLICK A NODE</p>
+    <div className="architecture-heading"><p className="panel-label">REPRESENTATIVE SYSTEM ARCHITECTURE // CLICK A NODE</p><small>EXAMPLE FULL-STACK DATA FLOW</small></div>
     <div className="architecture-flow">
-     <button onClick={()=>setSelectedNode('DATA')} className={`flow-node data-node ${selectedNode==='DATA'?'selected':''}`}><small>01 / INGESTION</small><strong>CLINICAL DATA</strong><span>Validate · Transform</span></button>
-     <span className="flow-arrow horizontal data-flow"><i/>DB I/O</span>
-     <button onClick={()=>setSelectedNode('BACKEND')} className={`flow-node backend-node ${selectedNode==='BACKEND'?'selected':''}`}><small>02 / SERVER</small><strong>BACKEND</strong><span>Go · Node.js</span></button>
-     <span className="flow-arrow horizontal response-flow"><i/>API RESPONSE</span>
-     <button onClick={()=>setSelectedNode('FRONTEND')} className={`flow-node frontend-node ${selectedNode==='FRONTEND'?'selected':''}`}><small>03 / CLIENT</small><strong>FRONTEND</strong><span>React · TypeScript</span></button>
-     <span className="flow-arrow branch"><i/>MODEL I/O</span>
-     <button onClick={()=>setSelectedNode('ML')} className={`flow-node ml-node ${selectedNode==='ML'?'selected':''}`}><small>04 / INTELLIGENCE</small><strong>ML SERVICE</strong><span>TensorFlow · PyTorch</span></button>
+     <button onClick={()=>setSelectedNode('SOURCES')} className={`flow-node source-node ${selectedNode==='SOURCES'?'selected':''}`}><small>01 / SOURCES</small><strong>SOURCE DATA</strong><span>Files · APIs · Events</span></button>
+     <span className="flow-arrow horizontal source-flow"><i/>RAW INPUT</span>
+     <button onClick={()=>setSelectedNode('INGESTION')} className={`flow-node ingestion-node ${selectedNode==='INGESTION'?'selected':''}`}><small>02 / PROCESSING</small><strong>DATA PIPELINE</strong><span>Validate · Normalize · Transform</span></button>
+     <span className="flow-arrow horizontal storage-flow"><i/>PERSIST</span>
+     <button onClick={()=>setSelectedNode('STORAGE')} className={`flow-node storage-node ${selectedNode==='STORAGE'?'selected':''}`}><small>03 / STORAGE</small><strong>DATA LAYER</strong><span>Relational DB · Object Storage</span></button>
+     <span className="flow-arrow vertical storage-api-flow"><i/>READ / WRITE</span>
+     <button onClick={()=>setSelectedNode('BACKEND')} className={`flow-node backend-node ${selectedNode==='BACKEND'?'selected':''}`}><small>04 / SERVER</small><strong>BACKEND SERVICE</strong><span>Application Logic · REST APIs</span></button>
+     <span className="flow-arrow horizontal client-flow"><i/>API REQUEST / RESPONSE</span>
+     <button onClick={()=>setSelectedNode('FRONTEND')} className={`flow-node frontend-node ${selectedNode==='FRONTEND'?'selected':''}`}><small>05 / CLIENT</small><strong>WEB APPLICATION</strong><span>Responsive UI · TypeScript</span></button>
+     <span className="flow-arrow vertical model-flow"><i/>INFERENCE REQUEST / RESPONSE</span>
+     <button onClick={()=>setSelectedNode('ML')} className={`flow-node ml-node ${selectedNode==='ML'?'selected':''}`}><small>OPTIONAL SERVICE</small><strong>ML SERVICE</strong><span>Model Serving · Inference</span></button>
     </div>
-    <div className="flow-inspector"><small>SELECTED_NODE</small><strong>{selectedNode}</strong><span>{nodes[selectedNode]}</span></div>
+    <div className="flow-inspector"><small>SELECTED_NODE</small><strong>{nodeLabels[selectedNode]}</strong><span>{nodes[selectedNode]}</span></div>
    </div>
-   <div className="mini-terminal interactive-terminal"><div className="terminal-title"><div><i/><i/><i/></div><span>meaghan@portfolio: ~</span><b>INTERACTIVE</b></div><div className="terminal-tabs"><span className="active">terminal</span><span>README.md</span><span>fun_stuff.sh</span></div><div className="terminal-screen"><span className="terminal-comment">{'// ↑↓ history · TAB autocomplete · “help” commands 🤓'}</span>{history.map((item,index)=><div className="history-line" key={`${item.command}-${index}`}><p><b>➜</b> <em>~</em> {item.command}</p><span>{item.output}</span></div>)}<form onSubmit={runCommand}><b>➜</b><em>~</em><input autoComplete="off" spellCheck="false" value={command} onKeyDown={terminalKeys} onChange={e=>setCommand(e.target.value)} aria-label="Terminal command" placeholder="type a command…"/><i className="cursor"/></form></div></div>
+   <div className="mini-terminal interactive-terminal"><div className="terminal-title"><div><i/><i/><i/></div><span>meaghan@portfolio: ~</span><b>INTERACTIVE</b></div><div className="terminal-tabs" role="tablist" aria-label="Terminal files">{terminalTabs.map(([id,label])=><button type="button" role="tab" id={`terminal-tab-${id}`} aria-controls={`terminal-panel-${id}`} aria-selected={activeTerminalTab===id} className={activeTerminalTab===id?'active':''} onClick={()=>setActiveTerminalTab(id)} key={id}>{label}</button>)}</div>
+   <div className="terminal-screen" role="tabpanel" id={`terminal-panel-${activeTerminalTab}`} aria-labelledby={`terminal-tab-${activeTerminalTab}`}>
+    {activeTerminalTab==='terminal'&&<><span className="terminal-comment">{'// ↑↓ history · TAB autocomplete · “help” commands 🤓'}</span>{history.map((item,index)=><div className="history-line" key={`${item.command}-${index}`}><p><b>➜</b> <em>~</em> {item.command}</p><span>{item.output}</span></div>)}<form onSubmit={runCommand}><b>➜</b><em>~</em><input autoComplete="off" spellCheck="false" value={command} onKeyDown={terminalKeys} onChange={e=>setCommand(e.target.value)} aria-label="Terminal command" placeholder="type a command…"/><i className="cursor"/></form></>}
+    {activeTerminalTab==='readme'&&<article className="terminal-document"><span className="terminal-comment"># README.md</span><h3>Welcome to my engineering console.</h3><p>This little terminal is a quick way to explore my work, skills, and background.</p><p><b>Try:</b> <code>help</code>, <code>who_am_i</code>, <code>projects</code>, or <code>resume</code>.</p><p>Use ↑ and ↓ for command history and Tab to autocomplete.</p></article>}
+    {activeTerminalTab==='fun'&&<div className="terminal-document fun-script"><span className="terminal-comment">#!/bin/zsh</span><p><b>$</b> ./fun_stuff.sh</p><p>Runs a highly scientific portfolio diagnostic.</p><button type="button" onClick={runFunScript}>RUN SCRIPT <span>▶</span></button>{scriptOutput&&<p className="script-output" aria-live="polite">{scriptOutput}</p>}</div>}
+   </div></div>
   </div>
  </section>
 
