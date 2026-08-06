@@ -41,6 +41,16 @@
   font-size: 1.05rem;
 }
 
+.contact-card{position:relative;padding:34px;border:1px solid var(--line);background:var(--panel);box-shadow:22px 22px rgba(39,135,220,.08)}
+.contact-card:before{content:"";position:absolute;inset:-8px;z-index:-1;border:1px dashed rgba(53,217,255,.12)}
+.contact-card-body{display:flex;flex-direction:column;align-items:flex-start;padding:54px 0 24px}
+.contact-card-icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:28px;border:1px solid rgba(53,217,255,.4);border-radius:50%;color:var(--cyan);font-size:1.45rem;box-shadow:0 0 28px rgba(53,217,255,.1)}
+.contact-card-label{margin:0 0 15px;color:var(--cyan);font:600 .7rem DM Mono;letter-spacing:.12em}
+.contact-card h2{max-width:520px;margin:0;font:700 clamp(2.2rem,4vw,4rem)/1.05 Syne;letter-spacing:-.045em}
+.contact-card-body>p:not(.contact-card-label){max-width:520px;margin:22px 0 32px;color:var(--muted);font-size:1.05rem;line-height:1.75}
+.contact-email-button{width:100%;justify-content:space-between}
+.contact-card small{align-self:center;margin-top:18px;color:#6f8ca3;font:500 .68rem DM Mono}
+
 @media (max-width: 600px) {
   .contact-links a {
     grid-template-columns: 1fr auto;
