@@ -31,3 +31,6 @@ html{font-size:18px}
 
 /* Cohesive display typography across every page. */
 h1,h2,h3,.hero-copy h1,.page-header h1,.section-heading h2,.deck-heading h2,.talk-dock h2,.about-title h1,.facts-heading h2,.stack-heading h2,.about-card h3,.stack-group h3,.timeline-content h2,.resume-section h2,.project-info h2,.modal-copy h2,.contact-copy h1,.not-found h1{font-family:"Space Grotesk",sans-serif!important}
+
+/* Keep the command launcher tucked into the lower-right corner. */
+.command-trigger{left:auto;right:12px!important;bottom:8px!important;transform:none}
