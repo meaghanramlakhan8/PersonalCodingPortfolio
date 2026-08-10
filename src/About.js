@@ -105,7 +105,7 @@ export default function About() {
           <p>
             I like asking the extra questions: Who will use this? What could
             break? How can we make it scalable? I’m happiest moving between
-            architecture diagrams, code, data, and conversation.
+            code, data, and conversation.
           </p>
 
           <p>
@@ -135,7 +135,7 @@ export default function About() {
           </p>
 
           <p>
-            My sweet spot is building software that combines thoughtful user
+            I enjoy building software that combines thoughtful user
             experiences with interesting technical challenges.
           </p>
         </article>

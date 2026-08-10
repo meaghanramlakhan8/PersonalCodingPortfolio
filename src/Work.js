@@ -9,7 +9,6 @@ const workExperiences = [
     duration: 'Present',
     responsibilities: [
       'Build software that ingests and processes complex clinical data for downstream platform use.',
-      'Develop and maintain reliable data workflows that transform healthcare information into consistent, usable formats.',
       'Collaborate with engineers across the data platform to improve system reliability, code clarity, and long-term maintainability.',
     ],
   },
