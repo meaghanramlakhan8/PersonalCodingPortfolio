@@ -25,14 +25,12 @@ const publications = [
     tags: ['AlphaFold3', 'Antibodies', 'Benchmarking', 'Drug discovery'],
   },
   {
-  title: 'Forced Vital Capacity Study',
+  title: 'FVC Study',
   authors: 'Research collaboration',
   year: '2026',
   status: 'Ongoing research',
   venue: 'UTHealth Houston',
-  description:
-    'A study examining forced vital capacity in systemic sclerosis–associated interstitial lung disease (SSc-ILD).',
-  tags: ['SSc-ILD', 'Forced vital capacity', 'Clinical research'],
+  tags: ['FVC', 'Clinical research'],
 },
 ];
 

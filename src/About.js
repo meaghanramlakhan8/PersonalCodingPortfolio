@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-const facts=[['🇹🇹','Born & raised','Trinidad and Tobago'],['🚀','Currently orbiting','Houston (Space City), TX'],['🔭', 'Certified nerd about', 'Space exploration, books, LEGO, video games, and superheroes'],['🍜', 'Always exploring', 'Food spots, coffee shops, museums, and hidden gems'],['🧩', 'What keeps me curious', 'Problems that require both logic and creativity']];
+const facts=[['🇹🇹','Born & raised','Trinidad and Tobago'],['🚀','Currently orbiting','Houston (Space City), TX'],['🔭', 'Certified nerd about', 'Space exploration, books, LEGO building, video games, and superheroes'],['🍜', 'Always exploring', 'Food spots, coffee shops, museums, and hidden gems'],['🧩', 'What keeps me curious', 'Problems that require both logic and creativity']];
 const stackGroups = [
   {
     icon: '⌨️',
