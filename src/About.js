@@ -43,6 +43,21 @@ const stackGroups = [
     'Jira',
   ],
 },
+{
+  icon: '🤖',
+  title: 'AI-Assisted Development',
+  items: [
+    'Claude Code',
+    'Claude Skills',
+    'OpenAI Codex',
+    'Microsoft Copilot',
+    'Prompt Engineering',
+    'Context Management',
+    'Test & Documentation Generation',
+    'Rapid Prototyping',
+    'Multi-File Agent Workflows',
+  ],
+},
 ];
 
 export default function About() {
@@ -92,8 +107,8 @@ export default function About() {
           </p>
 
           <p>
-            That curiosity led me to RiceApps, the CPRIT BIG-TCR Cancer & AI
-            internship, NASA L’SPACE academy, and several years of teaching and
+            That curiosity led me to the CPRIT BIG-TCR Cancer & AI
+            internship, RiceApps, NASA L’SPACE academy, and several years of teaching and
             mentoring computer science students as a teaching assistant.
           </p>
         </article>
@@ -113,6 +128,7 @@ export default function About() {
             students, and collaborated across research, education, and product
             environments.
           </p>
+
         </article>
 
         <article className="about-card">
@@ -131,7 +147,8 @@ export default function About() {
 
           <p>
             <strong>Toolkit:</strong> React, Node.js, TensorFlow, PyTorch,
-            Pandas, NumPy, MySQL, MongoDB, AWS, Git, and Linux.
+            Pandas, NumPy, MySQL, MongoDB, AWS, Git, Linux, Claude Code,
+            OpenAI Codex, and Microsoft Copilot.
           </p>
 
           <p>
