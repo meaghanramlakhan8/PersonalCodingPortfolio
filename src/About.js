@@ -77,7 +77,7 @@ export default function About() {
         <div className="intro-layout">
           <p className="intro-lead">
             I’m Meaghan Ramlakhan, an Associate Software Engineer at
-            Omniscience and a recent Rice University computer science graduate.
+            OmniScience and a recent Rice University computer science graduate.
             I enjoy building thoughtful, reliable technology that can make a
             meaningful difference in people’s lives.
           </p>
