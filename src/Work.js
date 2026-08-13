@@ -4,9 +4,9 @@ import './Work.css';
 const workExperiences = [
   {
     role: 'Associate Software Engineer',
-    company: 'Omniscience',
+    company: 'OmniScience',
     location: 'Houston, TX',
-    duration: 'Present',
+    duration: 'June 2026 - Present',
     responsibilities: [
       'Build software that ingests and processes complex clinical data for downstream platform use.',
       'Collaborate with engineers across the data platform to improve system reliability, code clarity, and long-term maintainability.',
