@@ -230,7 +230,7 @@ export default function About() {
           <h2>Curiosity encouraged.</h2>
 
           <p>
-            I’ve always been fascinated by space and exploration, and living in Houston 
+            I’ve always been fascinated by astronomy and space exploration, and living in Houston 
             has only deepened that interest. It inspired the mission-control details, 
             orbital graphics, coordinates, and a few hidden surprises scattered 
             throughout this site.
